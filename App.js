@@ -1,64 +1,62 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image } from 'react-native';
-import { AntDesign } from '@expo/vector-icons';
 import { SimpleLineIcons } from '@expo/vector-icons';
-import { FontAwesome5 } from '@expo/vector-icons';
-import { FontAwesome6 } from '@expo/vector-icons';
-import UserDetail from './UserDetails';
-import UserDetails from './UserDetails';
+import { FontAwesome } from '@expo/vector-icons';
+import { Feather } from '@expo/vector-icons';
 
 export default function App() {
   return (
     <View style={styles.container}>
-       <Image
-        source={require("./sphe.png")}
-        style={styles.profilePicture}
-      />
-      <View style={styles.detailsBox}>
-      <UserDetails label="REABETSOE SEPHEKOLA" value="10hrs"/>
-      
+      <View style={styles.profile}>
+        <View style={styles.one}>
+          <Image source={require("./sphe.png")} style={styles.profilepicture} />
+          <Text style={styles.rea}>Reabetsoe Sephekola</Text>
+        </View>
       </View>
-
-     <view><AntDesign name="ellipsis1" size={24} color="black" /></view>
-
-      <AntDesign name="picture" size={400} color="black" />
-      <SimpleLineIcons name="like" size={24} color="black" />
-      <FontAwesome5 name="comment-alt" size={24} color="black" />
-      <FontAwesome6 name="share" size={24} color="black" />
-      
-      
+      <Text>
+        Experienced software engineer with passion for developing innovative programs that expedite the efficiency and effectiveness of organizational success. Well-versed in technology and writing code to create systems that are reliable and user-friendly.
+      </Text>
+      <Image source={require("./sphe.png")} style={styles.body} />
+      <View style={styles.two}>
+        <SimpleLineIcons name="like" size={24} color="black" />
+        <Text> 62 likes</Text>
+        <FontAwesome name="comment-o" size={24} color="black" />
+        <Text> 9 comments</Text>
+        <Feather name="share-2" size={24} color="black" />
+        <Text>3 shares</Text>
+      </View>
       <StatusBar style="auto" />
     </View>
-    
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white',
-    alignContent: 'space-between'
-    
+    backgroundColor: '#fff',
   },
- 
-  white: {
-    color: 'white',
-    fontSize: 20,
-    marginBottom: 5,
-    
-    
+  profilepicture: {
+    padding: 30,
+    borderRadius: 39,
+    height: 34,
+    width: 23,
   },
-  profilePicture: {
-    paddingTop:0,
-    width: 50,
-    height: 50,
-    borderRadius: 50,
-    resizeMode: 'cover',
-    marginBottom: 10,
+  profile: {
+    padding: 40,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
   },
-  boody: {
-    alignContent: 'flex-start',
-
+  body: {
+    padding: 25,
+    height: 493,
+    width: 493,
+  },
+  one: {
+    flexDirection: 'row',
+  },
+  two: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
   },
  
 });
